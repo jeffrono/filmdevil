@@ -1,4 +1,4 @@
-<?require_once("dbFunctions.php"); ?>
+<? require_once("dbFunctions.php"); ?>
 
 
 
@@ -14,7 +14,7 @@
 
 <script language="javascript">
 
-<?$searchInRows = SEARCH_ROW;
+<? $searchInRows = SEARCH_ROW;
 
 	if(ON_APACHE)
 
