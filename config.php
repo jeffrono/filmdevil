@@ -1,20 +1,28 @@
 <?
 // REMOTE FILMDEVIL SERVER CONFIG
 
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+
 // DB Properties
-define("DB_HOST", "128.121.4.19:3306");
-define("DB_NAME", "filmfests");
-define("DB_USER", "devil");
-define("DB_PASSWORD", "films");
+define("DB_HOST", $server);
+define("DB_NAME", $db);
+define("DB_USER", $username);
+define("DB_PASSWORD", $password);
 
 // ERROR properties
-define("ERROR_CONTACT", "drpepper@fastmail.fm");
+define("ERROR_CONTACT", "jeffnovich@gmail.com");
 define("EMAIL_ERROR", false);
 define("LOG_ERROR", true);
 define("ECHO_ERROR", true);
 
 // NETWORK properties
-define("URL_ROOT", "http://www.filmdevil.com/"); // Ends with a /
+define("URL_ROOT", "http://filmdevil.herokuapp.com"); // Ends with a /
 define("ONLINE", true); // are you connected to the internet?
 define("FESTS_URL_REWRITE", true); // is the /fests/fest_name.php url rewrite on?
 
@@ -39,11 +47,11 @@ define("EMAIL_FOOTER", "\n\n---------------------\n"
 	. "  The most comprehensive film festival database ever.\n"
   . "  http://www.filmdevil.com");
 define("SUPPORT_CONTACT", "FilmDevil Support");
-define("SUPPORT_EMAIL", "jeffnovich@hotmail.com");
+define("SUPPORT_EMAIL", "jeffnovich@gmail.com");
 
 // PAYMENT options
-define("PAYPAL_EMAIL", "support@filmdevil.com");
+define("PAYPAL_EMAIL", "jeffnovich@gmail.com");
 define("PROMOTION_CONTACT", "FilmDevil Promotion");
-define("PROMOTION_EMAIL", "promotion@filmdevil.com");
+define("PROMOTION_EMAIL", "jeffnovich@gmail.com");
 
 ?>
