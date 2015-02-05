@@ -54,7 +54,7 @@ function isPromoActive($festID, $promoName) {
 		on promotion.id = purchasePackagePromotion.promotionID
 		where shortName = '$promoName' and festID = $festID
 		and startDate <= now() and endDate >= now() and status = 'activated'");
-	return mysql_num_rows($result) > 0;
+	return mysqli_num_rows($result) > 0;
 }
 
 function setSimilarFests($festID, $num) {
@@ -64,7 +64,7 @@ function setSimilarFests($festID, $num) {
 	}
 
 	fd_connect();
-	$festRow = mysql_fetch_assoc(fd_query("select heuristic from fests where
+	$festRow = mysqli_fetch_assoc(fd_query("select heuristic from fests where
 		ID = $festID"));
 	// Get similar heuristic values
 	$step = 5;
@@ -76,7 +76,7 @@ function setSimilarFests($festID, $num) {
 		$lowerBound -= $step;
 		$similarResult = fd_query("select ID from fests where heuristic >= $lowerBound
 			&& heuristic <= $upperBound");
-		$festsFound = mysql_num_rows($similarResult);
+		$festsFound = mysqli_num_rows($similarResult);
 	}
   $similarArray = makeDblArray($similarResult);
 	$randKeys = array_rand($similarArray, $num);
@@ -97,7 +97,7 @@ function generateHeuristic($festID, $writeToDB = true, $explain = false) {
 
 	fd_connect();
 	$heuristic = 0;
-	$festRow = mysql_fetch_assoc(fd_query("select * from fests where
+	$festRow = mysqli_fetch_assoc(fd_query("select * from fests where
 		ID = $festID"));
 
 	if($festRow["stFriend"] == 1) {
@@ -119,7 +119,7 @@ function generateHeuristic($festID, $writeToDB = true, $explain = false) {
 		$explainArray[] = "prizes: none = +.3";
 	}
 
-	$feeRow = mysql_fetch_assoc(fd_query("select AVG(Feature) as feature,
+	$feeRow = mysqli_fetch_assoc(fd_query("select AVG(Feature) as feature,
 		AVG(Short) as short, AVG(Student) as student, AVG(Other) as other
 		from fees where festID = $festID"));
 	$averagePrices = array();
@@ -135,7 +135,7 @@ function generateHeuristic($festID, $writeToDB = true, $explain = false) {
 		$explainArray[] = "averagePrices: 0";
 	}
 
-	$lengthRow = mysql_fetch_assoc(fd_query("select 1 + TO_DAYS(endDate)
+	$lengthRow = mysqli_fetch_assoc(fd_query("select 1 + TO_DAYS(endDate)
 		- TO_DAYS(startDate) as days from fests where ID = $festID"));
 	$heuristic += .9 * $lengthRow["days"];
 	if(!isset($lengthRow["days"]))
@@ -301,13 +301,12 @@ function getDisplayLocation($festRow) {
 
 // *** DATABASE FUNCTIONS ***
 function fd_connect() {
-	$link = mysql_connect(DB_HOST, DB_USER, DB_PASSWORD);
-	mysql_select_db(DB_NAME);
+	$link = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	return $link;
 }
 
 function fd_close() {
-	mysql_close();
+	mysqli_close();
 }
 
 // If isNumeric is false(default), returns the string with html special characters
@@ -340,18 +339,18 @@ function fd_filter_batch($arr, $isNumeric = false, $optional = false,
 }
 
 function fd_query($query) {
-    $result = mysql_query($query);
+    $result = mysqli_query($query);
     if($result === false) {
-       	$code = mysql_errno();
-        $error = mysql_error();
+       	$code = mysqli_errno();
+        $error = mysqli_error();
         if(ECHO_ERROR)
         	echo $error . " in query " . $query . "<br>";
-		if(LOG_ERROR) mysql_query("INSERT INTO error (type, code, info, page, query) VALUES ("
+		if(LOG_ERROR) mysqli_query("INSERT INTO error (type, code, info, page, query) VALUES ("
 			. "'SQL',"
             . $code . ", '"
-            . mysql_real_escape_string($error) . "'"
-			. ", '" . mysql_real_escape_string($_SERVER['PHP_SELF']) . "',"
-            . "'" . mysql_real_escape_string($query) . "')"
+            . mysqli_real_escape_string($error) . "'"
+			. ", '" . mysqli_real_escape_string($_SERVER['PHP_SELF']) . "',"
+            . "'" . mysqli_real_escape_string($query) . "')"
         );
         if(EMAIL_ERROR) mail(ERROR_CONTACT,
         	"FILMDEVIL - Error DB", "Code: " . $code . "\nDescription: " . $error
@@ -374,7 +373,7 @@ function createUndo($tableName, $keyName, $keyValue, $excludeCols = array()) {
 	$colResult = fd_query("show columns from " . $tableName);
 	if(!is_int($keyValue))
 		$keyValue = "'" . $keyValue . "'";
-	$valueRow = mysql_fetch_assoc(fd_query("select * from $tableName where
+	$valueRow = mysqli_fetch_assoc(fd_query("select * from $tableName where
 		$keyName = $keyValue"));
 	if(empty($valueRow)) {
 		trigger_error("Couldn't find value row for that key");
@@ -383,7 +382,7 @@ function createUndo($tableName, $keyName, $keyValue, $excludeCols = array()) {
 
 	$updateQuery = "update $tableName set";
 	$rowNum = 0;
-	while($colRow = mysql_fetch_assoc($colResult)) {
+	while($colRow = mysqli_fetch_assoc($colResult)) {
 		if($colRow["Field"] != $keyName
 			&& array_search($colRow["Field"], $excludeCols) === false) {
 			$colValue = $valueRow[$colRow["Field"]];
@@ -407,7 +406,7 @@ function createUndo($tableName, $keyName, $keyValue, $excludeCols = array()) {
 
 function makeDblArray($mysqlResult) {
 	$dblArray = array();
-	while($row = mysql_fetch_assoc($mysqlResult)) {
+	while($row = mysqli_fetch_assoc($mysqlResult)) {
 		$dblArray[] = $row;
 	}
 	return $dblArray;
@@ -477,10 +476,10 @@ function userErrorHandler ($errno, $errmsg, $filename, $linenum, $vars) {
     //if ($errno == E_USER_ERROR)
 	if(LOG_ERROR) {
     	fd_connect();
-        mysql_query("INSERT INTO error (type, code, info, page) VALUES ("
-			. "'" . mysql_real_escape_string($errortype[$errno]) . "',"
+        mysqli_query("INSERT INTO error (type, code, info, page) VALUES ("
+			. "'" . mysqli_real_escape_string($errortype[$errno]) . "',"
             . $errno . ","
-            . "'" . mysql_real_escape_string($errmsg) . "'"
+            . "'" . mysqli_real_escape_string($errmsg) . "'"
 			. ", '" . $filename . " - line " . $linenum . "')"
         );
     }

@@ -6,7 +6,7 @@ if(!isLoggedIn())
 	redirectToLogin();
 
 function getBlankRow() {
-	$row = mysql_fetch_assoc(fd_query("select * from fests limit 1"));
+	$row = mysqli_fetch_assoc(fd_query("select * from fests limit 1"));
     foreach($row as $key => $value)
     	$row[$key] = "";
 	return $row;
@@ -25,7 +25,7 @@ if ($operation == "update"){
 			print "You can't edit this information";
 			die();
     } else {
-    	$result = mysql_fetch_assoc(
+    	$result = mysqli_fetch_assoc(
         	fd_query("select * from fests where ID = $form_festID"));
     }
 } else {

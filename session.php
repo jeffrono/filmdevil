@@ -40,7 +40,7 @@ function festEditAuthorized($userID, $festID) {
 	fd_connect();
     $userID = fd_filter($userID, true);
     $festID = fd_filter($festID, true);
-	$result = mysql_fetch_assoc(fd_query("select userID from userFest where userID = "
+	$result = mysqli_fetch_assoc(fd_query("select userID from userFest where userID = "
     	. $userID . " and festID = " . $festID
         . " and relation = 'admin'"));
     return !empty($result);
@@ -98,7 +98,7 @@ function login($email, $password) {
 	fd_connect();
   $email = fd_filter($email);
 	$password = fd_filter($password);
-  $result = mysql_fetch_assoc(fd_query(
+  $result = mysqli_fetch_assoc(fd_query(
     "select * from user where email = '$email' and password = '$password' and createKey = ''"));
   if($result == "") return false;
 
@@ -131,8 +131,8 @@ function login($email, $password) {
 	$result = fd_query("select title from userFest inner join fests
 		on fests.id = userFest.festID where userID = " . $_SESSION["user_id"]
 		. " and relation = 'admin'");
-	if(mysql_num_rows($result) == 1) {
-		$row = mysql_fetch_assoc($result);
+	if(mysqli_num_rows($result) == 1) {
+		$row = mysqli_fetch_assoc($result);
 		$_SESSION["user_displayName"] = $row["title"];
 	} elseif(getDisplayName($userRow) != "Anonymous")
 		$_SESSION["user_displayName"] = getDisplayName($userRow, "user_");
@@ -163,7 +163,7 @@ function logout($saveNonUserData = false) {
 
 function canUpdateFest($festID) {
 	fd_connect();
-	$result = mysql_fetch_assoc(fd_query(
+	$result = mysqli_fetch_assoc(fd_query(
     	"select * from permission where festID = $festID and userID = " . $_SESSION["userID"]));
     return $result != "";
 }
