@@ -339,7 +339,8 @@ function fd_filter_batch($arr, $isNumeric = false, $optional = false,
 }
 
 function fd_query($query) {
-    $result = mysqli_query($query);
+	$link = fd_connect();
+    $result = mysqli_query($link, $query);
     if($result === false) {
        	$code = mysqli_errno();
         $error = mysqli_error();
