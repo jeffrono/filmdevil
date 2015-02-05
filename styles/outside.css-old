@@ -1,0 +1,174 @@
+.title {  font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #FFFFFF}
+
+
+a:link {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #CCCCCC; text-decoration: none}
+a:visited {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #CCCCCC; text-decoration: none}
+a:hover {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #FFFFFF; text-decoration: underline}
+
+.info { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-variant: normal; text-transform: none; color: #FFFFFF; border: thin #440000 none ; font-weight: bolder}
+.details { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-variant: normal; color: #FFFFFF; border: thin #440000 none ; font-weight: normal}
+.help { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-variant: normal; text-transform: none; color: #CCCCCC; border: thin #FF0000 none; background-color: #990000; font-weight: bolder}
+.popupheading { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bolder; background-color: #990000; color: #FFFFFF ; text-transform: uppercase; border: #CC0000; border-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin}
+.border {  border: #CC0000; border-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 900; color: #FFFFFF; background-color: #990000}
+.reviews { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-variant: normal; color: #FFFFFF; border: thin #440000 none ; font-weight: bold}
+.selectsmall { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 900; background-color: #990000; color: #FFFFFF }
+.bar {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000}
+
+BODY {
+	scrollbar-3dlight-color: #CC0000;
+	scrollbar-arrow-color: #CC0000;
+	scrollbar-base-color:black;
+	scrollbar-darkshadow-color: #660000;
+	scrollbar-face-color:#9900000;
+	scrollbar-highlight-color:black;
+	scrollbar-shadow-color:#660000;
+	background-color: #000000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #FFFFFF;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	background-color: #990000;
+	color: #FFFFFF;
+	border: 1px solid #FFFFFF;
+  width: 100px;
+}
+
+table {
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-size: 12px;
+	color: #FFFFFF;
+
+}
+
+.radio {
+	border: 0px none;
+	background-color: #000000;
+	width: 15px;
+
+}
+
+.button {
+	border: 3px double;
+	background-color: #000000;
+  font-size: 12px;
+  font-weight: bold;
+	width: 100px;
+}
+
+.buttonSelect {
+	border: 3px double;
+	/*background-color: #990000;*/
+  font-size: 12px;
+  font-weight: bold;
+	width: 100px;
+}
+
+
+select {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+  font-weight: bold;
+	background-color: #990000;
+	color: #FFFFFF;
+}
+
+h1 {
+	font-size: 14px;
+  align: center;
+}
+
+.searchhelp {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px; font-variant: normal;
+	text-transform: none;
+	color: #FFFFFF;
+	border: thin #CC0000 solid;
+	background-color: #990000;
+	padding: 5px;
+	font-weight: normal;
+	position: absolute;
+	z-index: 100;
+	top: 0px;
+	left: 0px;
+	visibility: hidden;
+}
+
+.tabBar {
+	font-size: 14px;
+}
+
+.tabSelected {
+	background-color: #000000;
+	margin: 0px;
+	border-top: 3px #CC0000 solid;
+	border-left: 3px #CC0000 solid;
+	border-right: 3px #CC0000 solid;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 30px;
+	vertical-align: text-bottom;
+}
+
+.tabNotSelected {
+	background-color: #660000;
+	margin: 0px;
+	border-top: 2px #990000 solid;
+	border-left: 2px #990000 solid;
+	border-right: 2px #990000 solid;
+	border-bottom: 3px #CC0000 solid;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 25px;
+	vertical-align: bottom;
+	text-decoration: underline;
+}
+
+.tabHighlighted {
+	background-color: #660000;
+	margin: 0px;
+	border-top: 2px #FFFFFF solid;
+	border-left: 2px #990000 solid;
+	border-right: 2px #990000 solid;
+	border-bottom: 3px #CC0000 solid;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 25px;
+	vertical-align: bottom;
+	cursor: hand;
+	text-decoration: underline;
+}
+
+.tabEmpty {
+	background-color: #000000;
+	margin: 0px;
+	border-bottom: 3px #CC0000 solid;
+	padding-left: 5px;
+	padding-right: 5px;
+	height: 25px;
+	vertical-align: bottom;
+}
+
+.menu {
+
+}
+
+.menuCell {
+	/* background-color: #660000; */
+	padding: 10px;
+}
+
+.menuCellHighlight {
+	background-color: #000000;
+	border: 1px #FFFFFF solid;
+	padding: 10px;
+}

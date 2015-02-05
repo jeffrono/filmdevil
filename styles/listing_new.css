@@ -1,0 +1,118 @@
+<!--
+
+body { background-color:#660000; }
+select, option, input {color:#0000FF; background-color:#EEEEEE; }
+
+/* page header styles */
+
+.devil_title { letter-spacing:5px; font-size:120%; text-decoration:none; color:#FFFFFF; }
+.tagline { font-size:80%; color:#FFFFFF; }
+
+.topmenu { width:100%; background-color:#000000; text-align:center; }
+	.topmenu_box { display:inline; }
+	.topmenu_link { letter-spacing:1px; font-size:80%; font-weight:normal; color:#CCCCFF; text-decoration:none; }
+
+/* page header styles */
+
+/* box styles */
+
+.header_bgcolor, .box_structure { background-color:#660000; }
+	.box_structure, .box_structure_stack, .box_inner_structure { width:100%; float:left; }
+	.box_inner_structure { border-width:1px; border-style:dotted; border-color:#000000; }
+	.box_structure_stack { float:none; background-color:#EEEEEE; }
+
+.box_title { width:100%; background-color:#000000; font-weight:bold; color:#FFFFCC; }
+.box_inner { padding:5px; width:100%; background-color:#FFFFFF; }
+
+/* box styles */
+
+/* text styles */
+
+a { font-family: arial; font-size:100%; font-weight:bold; color:#000000; }
+
+ol { margin-left:1.7em; }
+div { padding:2px; font-family:trebuchet ms; }
+
+.festival { font-family:trebuchet ms; font-size:70%; }
+
+.festival_left { font-family:trebuchet ms; font-size:100%; }
+
+.spacer_style { height:3px; font-size:2px; color:#660000; }
+
+.calendar, .calendar_box { display:inline; }
+	.calendar_box { background-color:#EEEEEE; }
+	.calendar_spacer { font-size:1px; width:1px; }
+
+.calendar_fest { font-size:55%; color:#440000; background-color:#EEEEEE; text-decoration:none; }
+
+.calendar_day { font-size:70%; color:#000000; background-color:#EEEEEE; text-decoration:underline; }
+
+.feature_title { font-size:13pt; background-color:#EEEEEE; }
+
+.feature_text, .review_text { font-size:90%; }
+
+.calendar_box { padding:0px; float:left; width:14%; height:80px; }
+
+.review_title { font-family:helvetica; font-weight:bold; letter-spacing:1.5px; color:#440000; background-color:#EEEEEE; }
+
+.reviewer_link { font-family:trebuchet ms; }
+
+.posted_by {  }
+
+/* text styles */
+
+/* homepage review box styles */
+
+.review_box { width:100%; padding:2px; }
+.review_box_inner { width:48%; display:inline; float:left; background-color:#EEEEEE; }
+
+.title_position { display:inline; float:left; position:absolute; }
+.review_header { position:relative; top:45%; }
+
+/* homepage review box styles */
+
+/* search page styles */
+
+.search_result { font-family:arial; font-size:80%; font-weight:bold; border-bottom-width:1px; border-bottom-color:#EEEEEE; border-bottom-style:dotted; }
+
+.result_rating { font-family:arial; font-size:70%; letter-spacing:2px; float:left; padding-left:5px; padding-right:5px; background-color:#EEEEEE; }
+
+.advanced_search { font-family:arial; font-weight:bold; font-size:85%; color:#000000; text-decoration:underline; }
+
+.quick_search_text { text-align:right; font-family:arial; font-size:70%; color:#CCCCCC; }
+.quick_search_link { font-family:arial; color:#666666; text-decoration:underline; }
+
+.error { background-color:#FFFF00; border-color:#000000; border-style:dotted; border-width:1px; color:#666666; font-weight:bold; text-align:center; }
+
+/* search page styles */
+
+/* festival information page [info.php] styles */
+
+.information_box { width:100%; border-style:dotted; border-width:1px; border-color:#EEEEEE; }
+	.information_box_positioner { float:left; width:100%; }
+
+.information_heading { float:left; font-size:105%; padding:5px; }
+
+.information_text { float:left; padding:5px; }
+
+.last_updated { width:100%; text-align:right; font-size:70%; background-color:#EEEEEE; }
+
+/* festival information page [info.php] styles */
+
+/* search results listing page [listing.php] styles */
+
+.result_box {padding:0px; float:left; width:100%;}
+
+.result_inner {float:left; width:100%; padding:0px;}
+
+/* search results listing page [listing.php] styles */
+
+/* help and about page styles */
+
+.header_style { text-transform:none; }
+
+.section_text { width:100%; float:left; }
+
+/* help and about page styles */
+
+-->

@@ -1,0 +1,133 @@
+body {
+	scrollbar-3dlight-color: #CC0000;
+	scrollbar-arrow-color: #CC0000;
+	scrollbar-base-color:black;
+	scrollbar-darkshadow-color: #660000;
+	scrollbar-face-color:#9900000;
+	scrollbar-highlight-color:black;
+	scrollbar-shadow-color:#660000;
+  color: #FFFFFF;
+  margin: 0px;
+  padding: 0px;
+  width: 140px;
+}
+
+a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #CCCCCC;
+	cursor: pointer;
+}
+a:link {  font-weight: bold; text-decoration: none}
+a:visited { text-decoration: none}
+a:hover {  text-decoration: none}
+
+.location {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; ; text-decoration: none}
+.read {  font-family: Arial, Helvetica, sans-serif; font-size: 9px;}
+
+/* NORMAL LISTING CLASSES */
+
+.highlighted {
+  background-color: #000000;
+  color: #FFFFFF;
+	curor: link;
+	cursor: hand;
+}
+
+.notHighlighted {
+  background-color: ;
+  color: #CCCCCC;
+}
+
+.selected a {
+  color: #000000;
+}
+
+.selected {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+
+/* DISTINCT BG LISTING CLASSES */
+
+.distinctBG, .distinctBGHighlighted {
+  background-color: #333333;
+	color: #CCCCCC;
+}
+
+.distinctBG a {
+	font-size: 24px;
+	font-weight: bold;
+	color: #CCCCCC;
+	cursor: pointer;
+}
+
+.distinctBGHighlighted a {
+	font-size: 24px;
+	font-weight: bold;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+.distinctBGSelected {
+	background-color: #FFFFFF;
+  color: black;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.distinctBGSelected a {
+	font-size: 24px;
+	font-weight: bold;
+	color: #000000;
+}
+
+/* BOLD LISTING CLASSES */
+
+.boldListing {
+	color: #CCCCCC;
+}
+
+.boldListing a {
+	font-weight: 900;
+	font-size: 20px;
+}
+
+.boldListingHighlighted {
+	background-color: #000000;
+	color: #FFFFFF;
+}
+
+.boldListingHighlighted a {
+	font-weight: 900;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+.boldListingSelected {
+	background-color: #FFFFFF;
+	color: #000000;
+}
+
+.boldListingSelected a {
+	font-weight: 900;
+	font-size: 20px;
+	color: #000000;
+}
+
+
+.error {
+	margin-top: 15px;
+	background-color: black;
+	color: #FF0000;
+	margin-bottom: 15px;
+}
+
+.arrow {
+	background-color: #000000;
+	padding-left: 2px;
+	padding-right: 2px;
+	color: #FFFFFF;
+}

@@ -1,0 +1,237 @@
+body {
+	background-color: #FFFFFF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #000000;
+	scrollbar-3dlight-color: #CC0000;
+	scrollbar-arrow-color: #CC0000;
+	scrollbar-base-color: white;
+	scrollbar-darkshadow-color: #660000;
+	scrollbar-face-color:#9900000;
+	scrollbar-highlight-color:black;
+	scrollbar-shadow-color:#660000;
+	margin-top: 15px; margin-right: 15px; margin-bottom: 15px; margin-left: 15px;
+	text-alight: justify;
+}
+
+a:link {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: red;
+	text-decoration: none;
+}
+
+a:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: red;
+	text-decoration: none;
+}
+
+
+a:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: red;
+	text-decoration: underline;
+}
+
+table {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+th {
+	text-align: center;
+	text-decoration: underline;
+	font-weight: normal;
+}
+
+.title {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.tagline {
+	font-size: 14px;
+	font-style: italic;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.location {
+	font-size: 14px;
+}
+
+
+div.userInfo {
+	margin-left: 10px;
+	margin-top: 5px;
+	margin-botton: 5px;
+	display: none;
+}
+
+ul, ol {
+	list-style-type: circle;
+	margin-top: 0px;
+	margin-right: 15px;
+	margin-bottom: 0px;
+	margin-left: 15px
+}
+
+.info { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-variant: normal; text-transform: none; color: #FFFFFF; border: thin #440000 none ; font-weight: bolder}
+.details { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-variant: normal; color: #FFFFFF; border: thin #440000 none ; font-weight: normal}
+.help { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-variant: normal; text-transform: none; color: #CCCCCC; border: thin #FF0000 none; background-color: #990000; font-weight: bolder}
+.popupheading { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bolder; background-color: #990000; color: #FFFFFF ; text-transform: uppercase; border: #CC0000; border-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin}
+.border {  border: #CC0000; border-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 900; color: #FFFFFF; background-color: #990000}
+.reviews { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-variant: normal; color: #FFFFFF; border: thin #440000 none ; font-weight: bold}
+.selectsmall { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 900; background-color: #990000; color: #FFFFFF }
+.bar {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: bold; color: #000000}
+
+.outlined {
+	border: thin solid #FF0000;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-style: normal;
+}
+
+input {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bolder;
+	background-color: #990000;
+	color: #FFFFFF;
+	border: 1px solid #000000;
+  width: 200px;
+}
+
+.button {
+	font-size: 13px;
+	border: 3px double;
+	background-color: #000000;
+  font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.buttonSelect {
+	font-size: 13px;
+	border: 3px double;
+	background-color: #990000;
+  font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+input.radio {
+	border: 0px none;
+	background-color: #FFFFFF;
+	color: #FF0000;
+	width: 15px;
+}
+
+.image {
+	background-color: #FFFFFF ;
+	width: auto;
+	height: auto;
+	border : 0px none;
+}
+
+select {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bolder;
+	background-color: #990000;
+	color: #FFFFFF;
+}
+
+textarea {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bolder;
+	background-color: #990000;
+	color: #FFFFFF;
+}
+
+h1 {
+	font-size: 14px;
+  align: center;
+}
+
+.section {
+	padding-top: 14px;
+}
+
+.sectionHeading {
+	font-size: 16px;
+	font-weight: bold;
+	font-variant: small-caps;
+	text-transform: capitalize;
+	color: #990000;
+}
+
+.sectionBody {
+	margin-bottom: 14px;
+}
+.error {
+	color: #FF0000;
+}
+
+.footer {
+	margin: 20px;
+	font-size: 10px;
+	text-align: center;
+}
+
+.deadlinePassed {
+	color: #990000;
+}
+
+.deadlineSoon {
+	color: green;
+}
+
+.hr {
+	background-color: black;
+	color: black;
+}
+
+.box {
+	border: 3px double #000000;
+}
+
+tr.alt1 {
+	background-color: #CCCCCC;
+}
+
+tr.alt2 {
+	background-color: #FFFFFF;
+}
+
+.linkSet {
+	margin: 10px;
+	text-align: center;
+}
+
+.similarFestBox {
+	text-align: center;
+	border: 1px solid #000000;
+}
+
+.similarFestBox .title {
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.quote {
+	font-style: italic;
+	padding-left: 40px;
+	padding-right: 40px;
+}
+
+.note {
+	font-size: 12px;
+}

@@ -1,0 +1,36 @@
+.title {  font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: bold; color: #FFFFFF}
+.fees {  font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-variant: normal; text-transform: uppercase; color: #FFFFFF; border: thin #440000 none}
+.links {  font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #CCCCCC}
+.description { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-variant: normal; color: #FFFFFF; border: thin #440000 none ; font-weight: normal}
+.heading { font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #FFFFFF; border: thin #440000 none ; text-transform: uppercase; font-weight: bold}
+a:link {  font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #CCCCCC; text-decoration: none}
+a:visited {  font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #CCCCCC; text-decoration: none}
+a:hover {  font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #FFFFFF; text-decoration: underline}
+.select {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	background-color: #990000;
+	color: #FFFFFF;
+	border: 1px solid #FFFFFF;
+}
+.info { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-variant: normal; text-transform: none; color: #FFFFFF; border: thin #440000 none ; font-weight: bolder}
+.details { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-variant: normal; color: #FFFFFF; border: thin #440000 none ; font-weight: normal}
+.help { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-variant: normal; text-transform: none; color: #CCCCCC; border: thin #FF0000 none; background-color: #990000; font-weight: bolder}
+.popupheading { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bolder; background-color: #990000; color: #FFFFFF ; text-transform: uppercase; border: #CC0000; border-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin}
+.border {  border: #CC0000; border-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin; font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 900; color: #FFFFFF; background-color: #990000}
+.reviews { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-variant: normal; color: #FFFFFF; border: thin #440000 none ; font-weight: bold}
+.selectsmall { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 900; background-color: #990000; color: #FFFFFF }
+.searchhelp { font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-variant: normal; text-transform: none; color: #FFFFFF; border: thin #CC0000 solid; background-color: #990000; font-weight: normal }
+.bar {  font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #000000}
+BODY {
+	scrollbar-3dlight-color: #CC0000;
+	scrollbar-arrow-color: #CC0000;
+	scrollbar-base-color:black;
+	scrollbar-darkshadow-color: #660000;
+	scrollbar-face-color:#9900000;
+	scrollbar-highlight-color:black;
+	scrollbar-shadow-color:#660000;
+	background-color: #000000;
+	font-size: 14px;
+}

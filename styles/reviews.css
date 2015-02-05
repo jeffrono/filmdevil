@@ -1,0 +1,16 @@
+.title {  font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: bold; color: #FFFFFF}
+.fees {  font-family: Arial, Helvetica, sans-serif; font-size: 9px; font-variant: normal; text-transform: uppercase; color: #FFFFFF; border: thin #440000 none}
+.links {  font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #CCCCCC}
+.description { font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-variant: normal; color: #FFFFFF; border: thin #440000 none ; font-weight: 900}
+.heading { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #FFFFFF; border: thin #440000 none ; text-transform: uppercase; font-weight: bold}
+a:link {  font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; color: #CCCCCC; text-decoration: none}
+a:hover {  font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; color: #FFFFFF; text-decoration: underline}
+a:visited {  font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-weight: bold; color: #CCCCCC; text-decoration: none}
+.select {  font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px; font-weight: bolder; background-color: #990000; color: #FFFFFF}
+.info { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-variant: normal; text-transform: none; color: #FFFFFF; border: 1px #440000 none ; font-weight: bolder}
+.details { font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-variant: normal; color: #FFFFFF; border: thin #440000 none ; font-weight: normal}
+.help { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-variant: normal; text-transform: none; color: #FFFFFF; border: thin #CC0000 solid; background-color: #990000; font-weight: normal}
+.popupheading { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 13px; font-weight: bolder; background-color: #990000; color: #FFFFFF ; text-transform: uppercase; border: #CC0000; border-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin}
+.border {  border: #CC0000; border-style: solid; border-top-width: thin; border-right-width: thin; border-bottom-width: thin; border-left-width: thin; font-family: Arial, Helvetica, sans-serif; font-size: 11px; font-weight: 900; color: #FFFFFF; background-color: #990000}
+.reviews { font-family: Arial, Helvetica, sans-serif; font-size: 10px; font-variant: normal; color: #FFFFFF; border: thin #440000 none ; font-weight: bold}
+.selectsmall { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9px; font-weight: 900; background-color: #990000; color: #FFFFFF }
