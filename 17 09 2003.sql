@@ -12,7 +12,7 @@ CREATE TABLE categories (
   ID int(11) NOT NULL auto_increment,
   cat varchar(50) default NULL,
   PRIMARY KEY  (ID)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'categories'
@@ -38,7 +38,7 @@ INSERT INTO categories VALUES (11,'Student');
 CREATE TABLE cattable (
   CID int(11) default NULL,
   FID int(11) default NULL
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'cattable'
@@ -547,7 +547,7 @@ CREATE TABLE data (
   id varchar(100) NOT NULL default '',
   data longtext,
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'data'
@@ -570,7 +570,7 @@ CREATE TABLE error (
   query varchar(255) default '',
   info varchar(255) NOT NULL default '',
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'error'
@@ -646,7 +646,7 @@ CREATE TABLE fees (
   Short int(6) default NULL,
   Student int(6) default NULL,
   Other int(6) default NULL
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'fees'
@@ -849,7 +849,7 @@ CREATE TABLE fests (
   lastDate date NOT NULL default '0000-00-00',
   vState varchar(100) default NULL,
   PRIMARY KEY  (ID)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'fests'
@@ -2495,7 +2495,7 @@ INSERT INTO fests VALUES (1738,'Test Fest 2','','','','','','','','','','','',''
 
 CREATE TABLE notify (
   email text
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'notify'
@@ -2525,7 +2525,7 @@ CREATE TABLE parenthood (
   childID int(11) NOT NULL default '0',
   tableName varchar(100) NOT NULL default '',
   PRIMARY KEY  (parentID,childID,tableName)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'parenthood'
@@ -2544,7 +2544,7 @@ CREATE TABLE projections (
   ID int(11) NOT NULL auto_increment,
   proj varchar(50) default NULL,
   PRIMARY KEY  (ID)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'projections'
@@ -2575,7 +2575,7 @@ INSERT INTO projections VALUES (16,'3/4 tape');
 CREATE TABLE projtable (
   PID int(11) default NULL,
   FID int(11) default NULL
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'projtable'
@@ -3112,7 +3112,7 @@ CREATE TABLE promotion (
   description varchar(255) NOT NULL default '',
   longName varchar(100) NOT NULL default '',
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'promotion'
@@ -3142,7 +3142,7 @@ CREATE TABLE purchase (
   festID int(11) NOT NULL default '0',
   amountPaid int(11) default '0',
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'purchase'
@@ -3185,7 +3185,7 @@ CREATE TABLE purchasepromotion (
   purchaseID int(11) NOT NULL default '0',
   promotionID int(11) NOT NULL default '0',
   PRIMARY KEY  (purchaseID,promotionID)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'purchasepromotion'
@@ -3243,7 +3243,7 @@ CREATE TABLE reviews (
   userID int(11) default '0',
   id int(11) NOT NULL auto_increment,
   PRIMARY KEY  (id)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'reviews'
@@ -3271,7 +3271,7 @@ CREATE TABLE stat (
   startDate date NOT NULL default '0000-00-00',
   endDate date NOT NULL default '0000-00-00',
   data int(11) NOT NULL default '0'
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'stat'
@@ -3296,7 +3296,7 @@ CREATE TABLE stattype (
   id varchar(100) NOT NULL default '0',
   name varchar(100) NOT NULL default '',
   description varchar(255) NOT NULL default ''
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'stattype'
@@ -3348,7 +3348,7 @@ CREATE TABLE user (
   festListRemindPeriod varchar(100) default '',
   PRIMARY KEY  (id),
   UNIQUE KEY emailIndex (email)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'user'
@@ -3368,7 +3368,7 @@ CREATE TABLE userfest (
   relation varchar(255) NOT NULL default '',
   festID int(11) NOT NULL default '0',
   UNIQUE KEY uniqueRow (userID,relation,festID)
-) TYPE=MyISAM;
+);
 
 --
 -- Dumping data for table 'userfest'

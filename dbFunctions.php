@@ -64,8 +64,8 @@ function setSimilarFests($festID, $num) {
 	}
 
 	fd_connect();
-	$festRow = mysqli_fetch_assoc(fd_query("select heuristic from fests where
-		ID = $festID"));
+	$festRow = fd_query("select heuristic from fests where
+		ID = $festID")->fetch_assoc();
 	// Get similar heuristic values
 	$step = 5;
 	$upperBound = $festRow["heuristic"];
@@ -97,8 +97,8 @@ function generateHeuristic($festID, $writeToDB = true, $explain = false) {
 
 	fd_connect();
 	$heuristic = 0;
-	$festRow = mysqli_fetch_assoc(fd_query("select * from fests where
-		ID = $festID"));
+	$festRow = fd_query("select * from fests where
+		ID = $festID")->fetch_assoc();
 
 	if($festRow["stFriend"] == 1) {
 		$heuristic += .6;
@@ -119,9 +119,9 @@ function generateHeuristic($festID, $writeToDB = true, $explain = false) {
 		$explainArray[] = "prizes: none = +.3";
 	}
 
-	$feeRow = mysqli_fetch_assoc(fd_query("select AVG(Feature) as feature,
+	$feeRow = fd_query("select AVG(Feature) as feature,
 		AVG(Short) as short, AVG(Student) as student, AVG(Other) as other
-		from fees where festID = $festID"));
+		from fees where festID = $festID")->fetch_assoc();
 	$averagePrices = array();
 	if($feeRow["feature"] != 0) $averagePrices[] = $feeRow["feature"];
 	if($feeRow["short"] != 0) $averagePrices[] = $feeRow["short"];
@@ -135,8 +135,8 @@ function generateHeuristic($festID, $writeToDB = true, $explain = false) {
 		$explainArray[] = "averagePrices: 0";
 	}
 
-	$lengthRow = mysqli_fetch_assoc(fd_query("select 1 + TO_DAYS(endDate)
-		- TO_DAYS(startDate) as days from fests where ID = $festID"));
+	$lengthRow = fd_query("select 1 + TO_DAYS(endDate)
+		- TO_DAYS(startDate) as days from fests where ID = $festID")->fetch_assoc();
 	$heuristic += .9 * $lengthRow["days"];
 	if(!isset($lengthRow["days"]))
 		$explainArray[] = "invalid dates";
@@ -340,7 +340,8 @@ function fd_filter_batch($arr, $isNumeric = false, $optional = false,
 
 function fd_query($query) {
 	$link = fd_connect();
-    $result = mysqli_query($link, $query);
+    $result = $link->query($query);
+
     if($result === false) {
        	$code = mysqli_errno();
         $error = mysqli_error();
@@ -374,8 +375,8 @@ function createUndo($tableName, $keyName, $keyValue, $excludeCols = array()) {
 	$colResult = fd_query("show columns from " . $tableName);
 	if(!is_int($keyValue))
 		$keyValue = "'" . $keyValue . "'";
-	$valueRow = mysqli_fetch_assoc(fd_query("select * from $tableName where
-		$keyName = $keyValue"));
+	$valueRow = fd_query("select * from $tableName where
+		$keyName = $keyValue")->fetch_assoc();
 	if(empty($valueRow)) {
 		trigger_error("Couldn't find value row for that key");
 		return "";
@@ -383,7 +384,7 @@ function createUndo($tableName, $keyName, $keyValue, $excludeCols = array()) {
 
 	$updateQuery = "update $tableName set";
 	$rowNum = 0;
-	while($colRow = mysqli_fetch_assoc($colResult)) {
+	while($colRow = $colResult->fetch_assoc()) {
 		if($colRow["Field"] != $keyName
 			&& array_search($colRow["Field"], $excludeCols) === false) {
 			$colValue = $valueRow[$colRow["Field"]];
@@ -407,7 +408,7 @@ function createUndo($tableName, $keyName, $keyValue, $excludeCols = array()) {
 
 function makeDblArray($mysqlResult) {
 	$dblArray = array();
-	while($row = mysqli_fetch_assoc($mysqlResult)) {
+	while($row = $mysqlResult->fetch_assoc()) {
 		$dblArray[] = $row;
 	}
 	return $dblArray;
