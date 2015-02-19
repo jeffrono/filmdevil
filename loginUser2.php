@@ -31,7 +31,7 @@ if(isset($_POST["Login"])) {
 	$password = fd_filter($form_password);
 
     fd_connect();
-    $result = mysql_fetch_assoc(fd_query("select id from user where email = '$email'"));
+    $result = fd_query("select id from user where email = '$email'")->fetch_assoc();
     if($result != "") {
 		header("Location: " . URL_ROOT . "loginUserPage.php?error=dupEmail");
 	} else {
@@ -45,7 +45,7 @@ if(isset($_POST["Login"])) {
 	$id = fd_filter($_GET["id"]);
 
     fd_connect();
-    $result = mysql_fetch_assoc(fd_query("select newEmail, status from user where id = $id"));
+    $result = fd_query("select newEmail, status from user where id = $id")->fetch_assoc();
 	if($result == "")
     	die("There is no such account");
 
@@ -96,8 +96,8 @@ if(isset($_POST["Login"])) {
     $email = fd_filter($form_email);
 	$createKey = fd_filter($form_createKey);
 	fd_connect();
-    $result = mysql_fetch_assoc(fd_query("select id, password, status from user where newEmail = '$email' "
-    	. "and createKey = '$createKey'"));
+    $result = fd_query("select id, password, status from user where newEmail = '$email' "
+    	. "and createKey = '$createKey'")->fetch_assoc();
     if($result == "")
 		header("Location: " . URL_ROOT . "loginUserPage.php?page2&inputKey&email=$email&error=wrongKey");
 	else {
@@ -163,7 +163,7 @@ if(isset($_POST["Login"])) {
 } else { // Forgot password
 	$email = fd_filter($_POST["email"]);
 	fd_connect();
-    $result = mysql_fetch_assoc(fd_query("select password, status from user where email = '$email'"));
+    $result = fd_query("select password, status from user where email = '$email'")->fetch_assoc();
 	if($result == "") {
 		header("Location: " . URL_ROOT . "loginUserPage.php?error=email");
 	} elseif($result["createKey"] != "") {
